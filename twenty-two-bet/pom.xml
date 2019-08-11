@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bet_task_1</artifactId>
+    <artifactId>twenty-two-bet</artifactId>
 
     <dependencies>
         <dependency>

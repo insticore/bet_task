@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>bet_task</artifactId>
-        <groupId>com.com.insticore</groupId>
+        <groupId>com.insticore</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bet_task_2</artifactId>
+    <artifactId>olimp</artifactId>
 
     <dependencies>
         <dependency>

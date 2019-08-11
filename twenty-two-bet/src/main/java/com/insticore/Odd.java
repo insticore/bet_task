@@ -1,5 +1,8 @@
 package com.insticore;
 
+/**
+ * Helper class to have the odd info in one place
+ */
 public class Odd {
     private int id;
     private String name;
