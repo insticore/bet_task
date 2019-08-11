@@ -19,7 +19,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class TwentyTwoBetParser {
 
-    private final Logger logger = LoggerFactory.getLogger(Main.class);
+    private final Logger logger = LoggerFactory.getLogger(TwentyTwoBetParser.class);
     private AsyncHttpClient asyncHttpClient;
     private static ExecutorService executorService;
     private static Lock tournamentLock = new ReentrantLock();
