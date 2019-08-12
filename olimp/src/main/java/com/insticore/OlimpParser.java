@@ -230,6 +230,16 @@ public class OlimpParser {
         Element gameNameLine = element.select("div.gameNameLine > font > b > span").first();
         String name = gameNameLine.text();
 
+
+        Element odds = eventPage.select("div.tab > div[data-match-id-show]").first();
+        if (odds == null || odds.children().size() == 0) {
+            //No odds in the event, nothing to do here
+            return;
+        }
+        String id =  odds.attr("data-match-id-show");
+
+        System.out.println(String.join(", ", name, date, id));  // Print event
+
         Elements mainOdds = eventPage.select("div.tab > nobr");
         if (mainOdds != null && mainOdds.size() > 0) {
             System.out.println("Главные исходы");
@@ -245,15 +255,6 @@ public class OlimpParser {
             }
 
         }
-
-        Element odds = eventPage.select("div.tab > div[data-match-id-show]").first();
-        if (odds == null || odds.children().size() == 0) {
-            //No odds in the event, nothing to do here
-            return;
-        }
-        String id =  odds.attr("data-match-id-show");
-
-        System.out.println(String.join(", ", name, date, id));  // Print event
 
         Elements markets = odds.children();
 
