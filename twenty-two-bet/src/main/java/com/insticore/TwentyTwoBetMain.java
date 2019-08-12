@@ -1,6 +1,6 @@
 package com.insticore;
 
-public class Main {
+public class TwentyTwoBetMain {
 
     public static void main(String[] args) {
         TwentyTwoBetParser twentyTwoBetParser = new TwentyTwoBetParser();

@@ -230,6 +230,22 @@ public class OlimpParser {
         Element gameNameLine = element.select("div.gameNameLine > font > b > span").first();
         String name = gameNameLine.text();
 
+        Elements mainOdds = eventPage.select("div.tab > nobr");
+        if (mainOdds != null && mainOdds.size() > 0) {
+            System.out.println("Главные исходы");
+            for (Element mainOdd : mainOdds) {
+                Element googleStatIssue = mainOdd.select("span.googleStatIssue").first();
+                Element googleStatIssueName = googleStatIssue.select("span.googleStatIssueName").first();
+                String mainOddName = googleStatIssueName.text();
+                Element span = googleStatIssue.select("span[data-id]").first();
+                String mainOddId = span.attr("data-id");
+                String mainOddValue = span.select("b.value_js > span#googleStatKef").text();
+                //Print odd
+                System.out.println(String.join(", ", "\t\t" + mainOddName, mainOddValue, mainOddId));
+            }
+
+        }
+
         Element odds = eventPage.select("div.tab > div[data-match-id-show]").first();
         if (odds == null || odds.children().size() == 0) {
             //No odds in the event, nothing to do here
